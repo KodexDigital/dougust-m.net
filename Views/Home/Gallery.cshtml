@@ -1,0 +1,86 @@
+﻿
+@{
+	ViewData["Title"] = "Gallery";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+	<div>
+		<!-- contact page breadcrumns -->
+		<section class="inner-banner">
+		</section>
+		<nav aria-label="breadcrumb">
+			<ol class="breadcrumb breadcrumb-padding">
+				<li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+				<li class="breadcrumb-item active" aria-current="page">Photo Album</li>
+			</ol>
+		</nav>
+		<!-- contact page breadcrumns -->
+		<!-- contact section -->
+		<section class="w3l-contact3">
+			<div class="contact1-bg section-gap">
+
+			</div>
+		</section>
+
+		<script>
+	// When the user scrolls down 20px from the top of the document, show the button
+	window.onscroll = function () {
+		scrollFunction()
+	};
+	function scrollFunction() {
+		if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+			document.getElementById("movetop").style.display = "block";
+		} else {
+			document.getElementById("movetop").style.display = "none";
+		}
+	}
+	// When the user clicks on the button, scroll to the top of the document
+	function topFunction() {
+		document.body.scrollTop = 0;
+		document.documentElement.scrollTop = 0;
+	}</script>
+		<!-- //move top -->
+		<!-- javascript -->
+		<script src="~/js/jquery-3.3.1.min.js"></script>
+
+		<!-- libhtbox -->
+		<script src="~/js/lightbox-plus-jquery.min.js"></script>
+		<!-- particles -->
+		<script src="~/js/particles.min.js"></script>
+		<script src="~/js/script.js"></script>
+		<!-- //particles -->
+		<!-- owl carousel -->
+		<script src="~/js/owl.carousel.js"></script>
+		<script>
+	$(document).ready(function () {
+		var owl = $('.owl-carousel');
+		owl.owlCarousel({
+			margin: 10,
+			nav: true,
+			loop: false,
+			responsive: {
+				0: {
+					items: 1
+				},
+				767: {
+					items: 2
+				},
+				1000: {
+					items: 3
+				}
+			}
+		})
+	})</script>
+
+		<!-- disable body scroll which navbar is in active -->
+		<script>
+	$(function () {
+		$('.navbar-toggler').click(function () {
+			$('body').toggleClass('noscroll');
+		})
+	});</script>
+		<!-- disable body scroll which navbar is in active -->
+		<!-- bootstrap -->
+		<script src="~/js/bootstrap.min.js"></script>
+	</div>
+

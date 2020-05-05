@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <title> @ViewData["Title"]|@ViewData["CompanyName"]</title>
+    <!--mobile apps-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- fonts -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" media="all" rel="stylesheet" type="text/css">
+    <link href='//fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'>
+    <!-- /fonts -->
+    <!-- css files -->
+    <link href="~/modules/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/modules/css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/modules/css/progressbar.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/modules/css/team.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/modules/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- /css files -->
+    <!-- js files -->
+    <script src="~/modules/js/modernizr.custom.js"></script>
+    <!-- /js files -->
+</head>
+<body>
+    <!-- navigation -->
+    <section class="navigation">
+        <div class="navbar-wrapper">
+            <div class="container">
+                <nav class="navbar navbar-inverse navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" asp-controller="Home" asp-action="Index"><h1>@ViewData["CompanyName"] </h1></a>
+                        </div>
+                        <div id="navbar" class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav navbar-right cl-effect-14">
+                                <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                                <li><a asp-controller="Home" asp-action="AboutUs">About us</a></li>
+                                <li><a asp-controller="Home" asp-action="Services">Services</a></li>
+                                <li><a asp-controller="Home" asp-action="Project">Projects</a></li>
+                                <li><a asp-controller="Home" asp-action="Client">Clients</a></li>
+                                <li><a asp-controller="Home" asp-action="HSE">HSE</a></li>
+                                <li><a asp-controller="Home" asp-action="OperationBase">Operation base</a></li>
+                                <li><a asp-controller="Home" asp-action="Gallery">Gallery</a></li>
+                                <li><a asp-controller="Home" asp-action="ContactUs">Contact us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </section>
+    <!-- /navigation -->
+    <!-- banner section -->
+    <section class="banner">
+        <div id="slideshow-banner">
+            <ul>
+                <li class="slideshow-item"><img src="/images/banner1.jpg" alt="" /></li>
+                <li class="slideshow-item"><img src="/images/banner3.jpg" alt="" /></li>
+                <li class="slideshow-item"><img src="/images/banner4.jpg" alt="" /></li>
+                <li class="slideshow-item"><img src="/images/banner2.jpg" alt="" /></li>
+            </ul>
+        </div>
+    </section>
+    <!-- /banner section -->
+
+    <div>
+        @RenderBody()
+
+
+
+        <!-- footer section -->
+        <section class="footer">
+            <p>© 2017 Realtor. All Rights Reserved | Design</p>
+        </section>
+        <a href="#0" class="cd-top">Top</a>
+        <!-- /footer section -->
+        <!-- js files -->
+        <script src="~/modules/js/jquery.min.js"></script>
+        <script src="~/modules/js/bootstrap.min.js"></script>
+        <script src="~/modules/js/SmoothScroll.min.js"></script>
+        <!-- js for banner -->
+        <script type="text/javascript" src="~/modules/js/jquery.slide.js"></script>
+        <script type="text/javascript">
+            $('#slideshow-banner').slide({
+                cdTime: 5000,
+                controllerLeftButton: "/images/left.png",
+                controllerRightButton: "//images/right.png"
+            });
+        </script>
+        <!-- /js for banner -->
+        <!-- js for team section -->
+        <script src="~/modules/js/index.js"></script>
+        <!-- /js for team section -->
+        <!-- js for pricing table pop up  -->
+        <script src="~/modules/js/jquery.magnific-popup.js" type="text/javascript"></script>
+        <script>
+            $(document).ready(function () {
+                $('.popup-with-zoom-anim').magnificPopup({
+                    type: 'inline',
+                    fixedContentPos: false,
+                    fixedBgPos: true,
+                    overflowY: 'auto',
+                    closeBtnInside: true,
+                    preloader: false,
+                    midClick: true,
+                    removalDelay: 300,
+                    mainClass: 'my-mfp-zoom-in'
+                });
+            });
+        </script>
+        <!-- /js for pricing table pop up  -->
+        <!-- js for skill section -->
+        <script src="~/modules/js/progressbar.js"></script>
+        <script>
+            // Display the progress bar calling progressbar.js
+            $('.progressbarPhp').progressBar({
+                shadow: true,
+                percentage: false,
+                animation: true,
+                animateTarget: true,
+                barColor: "rgb(86, 79, 77)",
+            });
+            //Menu
+            $(".spinDown").click(function () {
+                var target = $(this).data("target");
+                var scrollFix = -80;
+                target = "#" + target;
+                $("html,body").animate({
+                    scrollTop: $(target).offset().top + scrollFix
+                }, 1000);
+                return false;
+            });
+        </script>
+        <!-- /js for skill section -->
+        <script src="~/modules/js/main.js"></script>
+        <!-- /js files -->
+    </div>
+</body>
+</html>
